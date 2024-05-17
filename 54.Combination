@@ -1,0 +1,38 @@
+//Nodalo Rachel
+//this program will calculates the number of combinations (NCR) without explicitly computing factorials
+import java.util.Scanner;
+
+public class Combination {
+
+    //calculate combinations (NCR) without computing factorials
+    public static long nCr(int n, int r) {
+        if (r < 0 || r > n) {
+            return -1; 
+        }
+
+        long result = 1;
+        for (int i = 1; i <= r; i++) {
+            result *= (n - i + 1);
+            result /= i;
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the value of N: ");
+        int n = scanner.nextInt();
+        System.out.print("Enter the value of R: ");
+        int r = scanner.nextInt();
+
+        // Calculate NCR
+        long nCrResult = nCr(n, r);
+
+        // Check if the result is negative
+        if (nCrResult < 0) {
+            System.out.println("Error: Invalid input.");
+        } else {
+            System.out.println("Number of combinations (NCR) for N=" + n + " and R=" + r + " is: " + nCrResult);
+        }
+    }
+}
