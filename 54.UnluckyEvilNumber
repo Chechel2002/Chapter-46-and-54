@@ -1,0 +1,52 @@
+//Nodalo Rachel
+// this program determines the unlucky and evil number based on the upper limit
+public class UnluckyEvilNumber {
+
+    //check if a number is unlucky
+    public static boolean isUnlucky(long number) {
+        String numStr = Long.toString(number);
+        // Iterate through the string and check for the sequence "13"
+        for (int i = 0; i < numStr.length() - 1; i++) {
+            if (numStr.charAt(i) == '1' && numStr.charAt(i + 1) == '3') {
+                return true; // Return true if "13" sequence is found
+            }
+        }
+        return false; // Return false if no "13" sequence is found
+    }
+
+    //check if a number is evil
+    public static boolean isEvil(int number) {
+        int countOnes = 0;
+        // Count the number of ones in the binary representation
+        while (number != 0) {
+            if (number % 2 == 1) {
+                countOnes++;
+            }
+            number /= 2;
+        }
+        // If the count of ones is even, the number is evil
+        return countOnes % 2 == 0;
+    }
+
+    public static void main(String[] args) {
+        int upperLimit = 500; // Set an upper limit
+        boolean found = false;
+
+        // Loop from 1 to the upper limit
+        for (int i = 1; i <= upperLimit; i++) {
+            // Check if the number is unlucky
+            if (isUnlucky(i)) {
+                // If it is, check if it's also evil
+                if (isEvil(i)) {
+                    System.out.println(i + " is both unlucky and evil.");
+                    found = true;
+                }
+            }
+        }
+
+        if (!found) {
+            System.out.println("No unlucky numbers are also evil up to " + upperLimit + ".");
+        }
+    }
+}
+
