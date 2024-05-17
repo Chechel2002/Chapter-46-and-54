@@ -1,0 +1,24 @@
+//Nodalo Rachel
+import java.util.Scanner;
+
+class HelloObject {
+    private String greeting;
+
+    public void askForGreeting() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter Greeting:");
+        greeting = scanner.nextLine();
+    }//promts the user to input a greeting
+
+    public void printGreeting() {
+        System.out.println(greeting);
+    }
+}
+
+public class Hello {
+    public static void main(String[] args) {
+        HelloObject helloObj = new HelloObject();
+        helloObj.askForGreeting();
+        helloObj.printGreeting();
+    }//Call out and output the greeting
+}
