@@ -1,0 +1,32 @@
+//Nodalo Rachel
+class HelloObject {
+    private String morningGreeting;
+    private String eveningGreeting;
+
+    // Constructor to initialize the morning and evening greetings
+    public HelloObject(String morningGreeting, String eveningGreeting) {
+        this.morningGreeting = morningGreeting;
+        this.eveningGreeting = eveningGreeting;
+    }
+
+    public void printMorningGreeting() {
+        System.out.println(morningGreeting);
+    }    //output the morning greeting
+
+    public void printEveningGreeting() {
+        System.out.println(eveningGreeting);
+    }
+} //output the evening greeting
+
+public class Hello {
+    public static void main(String[] args) {
+        HelloObject helloObj = new HelloObject("Good morning World!", "Good evening World!");// Create HelloObject with morning and evening greetings
+        
+        // Output the morning greeting
+        helloObj.printMorningGreeting();
+        
+        // Output the evening greeting
+        helloObj.printEveningGreeting();
+    }
+}
+
