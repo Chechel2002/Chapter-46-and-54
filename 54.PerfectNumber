@@ -1,0 +1,33 @@
+//Nodalo rachel
+//this program finds all perfect numbers less than an upper limit entered by the user
+import java.util.Scanner;
+
+public class PerfectNumber {
+
+    // this is to check if a number is perfect
+    public static boolean isPerfect(int number) {
+        int sum = 1; // Initialize sum with 1 (since 1 is always a proper divisor)
+        for (int i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i == 0) {
+                sum += i; // Add divisor to sum
+                if (i != number / i) {
+                    sum += number / i; // Add corresponding divisor if not equal to current divisor
+                }
+            }
+        }
+        return sum == number; // Return true if sum equals the number
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the upper limit: ");
+        int upperLimit = scanner.nextInt();
+
+        System.out.println("Perfect numbers less than " + upperLimit + ":");
+        for (int i = 2; i < upperLimit; i++) {
+            if (isPerfect(i)) {
+                System.out.println(i);
+            }
+        }
+    }
+}
