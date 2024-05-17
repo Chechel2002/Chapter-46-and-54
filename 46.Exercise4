@@ -1,0 +1,32 @@
+//Nodalo Rachel
+class HelloObject {
+    private String greeting;
+
+    public HelloObject(String greeting) {
+        this.greeting = greeting;
+    }
+
+    // Additional constructor to initialize greeting from another HelloObject
+    public HelloObject(HelloObject init) {
+        // Create a new String object with the same value as the greeting of the parameter
+        this.greeting = new String(init.greeting);
+    }
+
+    //print the greeting
+    public void printGreeting() {
+        System.out.println(greeting);
+    }
+}
+
+public class Hello {
+    public static void main(String[] args) {
+        HelloObject helloObj1 = new HelloObject("Hello Po!");
+
+        // Create another instance of HelloObject using the additional constructor
+        HelloObject helloObj2 = new HelloObject(helloObj1);
+
+        // Print the greetings from both objects
+        helloObj1.printGreeting();
+        helloObj2.printGreeting();
+    }
+}
