@@ -1,0 +1,23 @@
+//Nodalo Rachel
+
+class HelloObject {
+ 
+    private String greeting;
+    public HelloObject(String greeting) {
+        this.greeting = greeting; 
+    }
+   
+    public void printGreeting() {
+        int length = greeting.length(); // Get the length of the greeting
+        for (int i = 0; i < length; i++) { // Loop to print the greeting multiple times
+            System.out.println(greeting); // Print the greeting
+        }
+    }
+}
+
+public class Hello {
+    public static void main(String[] args) {
+        HelloObject hello = new HelloObject("Hello");
+        hello.printGreeting();// Call the printGreeting method of HelloObject to print the greeting
+    }
+}
