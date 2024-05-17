@@ -1,0 +1,35 @@
+//Nodalo Rachel
+
+import java.util.Scanner;
+
+public class FactorialErrorFlag {
+
+    //calculate factorial
+    public static long factorial(int n) {
+        // Check if n is less than 0 or greater than 20
+        if (n < 0 || n > 20) {
+            return -1; // Return -1 for invalid input
+        }
+
+        long result = 1;
+        for (int i = 2; i <= n; i++) {
+            result *= i;
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number to calculate its factorial: ");
+        int num = scanner.nextInt();
+
+        long factorialResult = factorial(num);
+
+        // Check if the result is negative
+        if (factorialResult < 0) {
+            System.out.println("Error: Factorial for negative numbers or numbers greater than 20 is not defined.");
+        } else {
+            System.out.println("Factorial of " + num + " is: " + factorialResult);
+        }
+    }
+}//factorial method will returns -1 if the input is less than 0 or greater than 20. if the result is negative it will print an error message. Otherwise, we print the factorial result.
