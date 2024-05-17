@@ -4,16 +4,16 @@ import java.util.Scanner;
 
 public class OdiousNumber {
 
-    // Static method to check if a number is odious
+    //check if a number is odious
     public static boolean Odious(long number) {
         int countOnes = 0;
-        // Count the number of ones in the binary representation
+       
         while (number != 0) {
             if (number % 2 == 1) {
                 countOnes++;
             }
             number /= 2;
-        }
+        } // Count the number of ones in the binary representation
         // If the count of ones is odd, the number is odious
         return countOnes % 2 == 1;
     }
